@@ -1,0 +1,5 @@
+require("settings")
+require("keybinds")
+require("lazy_plugin")
+require("colorscheme")
+require("autocmd")
