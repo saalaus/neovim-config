@@ -17,7 +17,16 @@ return {
         end
     },
     {
-        "jiangmiao/auto-pairs",
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup {}
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            local cmp = require('cmp')
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
+        end
     },
     {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",

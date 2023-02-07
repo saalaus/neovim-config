@@ -104,7 +104,7 @@ Clone this repo on `~/.config/nvim` and run nvim
         - `nvim-web-devicons` - icons
     - `auto-save.nvim`
     - `indent-blankline.nvim`
-    - `auto-pairs`
+    - `nvim-autopairs`
     - `fidget.nvim`
     - `nvim-notify` - better notify
     - `vim-illuminate`
