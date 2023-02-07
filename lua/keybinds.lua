@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = false}
+local opts = {noremap = false, silent = false}
 
 map("i", "jj", "<Esc>", opts)
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', opts)

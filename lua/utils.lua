@@ -55,29 +55,6 @@ m.custom_on_publish_diagnostics = function(a, params, client_id, c, config)
 end
 
 
--- lsp diagnostic buffer nrs
-local diagnostics_buffer = {}
-
--- toggle diagnostics list
-m.ToggleDiagnosticsList = function()
-    local current_buf = vim.api.nvim_get_current_buf()
-
-    if not diagnostics_buffer[current_buf] then
-        vim.diagnostic.setloclist()
-        diagnostics_buffer[current_buf] = vim.api.nvim_get_current_buf()
-    else
-        vim.api.nvim_buf_delete(diagnostics_buffer[current_buf], {})
-        diagnostics_buffer[current_buf] = nil
-    end
-end
-
-
-local function get_gitignore(args)
-    local data = m.get_popen("curl " .. "https://www.toptal.com/developers/gitignore/api/" .. args.args)
-    -- print(vim.inspect(data))
-    vim.api.nvim_buf_set_current_line(data)
-end
-
 m.new_project = function()
     vim.ui.select({ "Empty folder", "poetry", "npm" }, { prompt = "Select type project" },
         function(item)
@@ -101,6 +78,5 @@ m.new_project = function()
         end)
 end
 
-vim.api.nvim_create_user_command("Gitignore", get_gitignore, { nargs = 1 })
 
 return m
