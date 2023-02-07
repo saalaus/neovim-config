@@ -29,7 +29,7 @@ Clone this repo on `~/.config/nvim` and run nvim
 ### LSP
 | Key | Action |
 | :---- | :------- |
-| `SPACE+e` | Open float window on problem |
+| `SPACE+k` | Open float window on problem |
 | `[d` | Goto prev problem |
 | `]d` | Goto next problem |
 | `gd` | Goto definition |
